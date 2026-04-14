@@ -40,3 +40,44 @@ A backend system for managing user health data, calculating BMI, and determining
 
 ---
 
+## API Endpoints
+| Method | Endpoint           | Description   |
+| ------ | ------------------ | ------------- |
+| POST   | /api/auth/register | Register user |
+| POST   | /api/auth/login    | Login user    |
+
+---
+
+##  Health Report Routes
+
+| Method | Endpoint     | Description     |
+| ------ | ------------ | --------------- |
+| POST   | /api/reports | Create report   |
+| GET    | /api/reports | Get user report |
+| PUT    | /api/reports | Update report   |
+| DELETE | /api/reports | Delete report   |
+
+## Example request
+
+---
+
+POST /api/reports
+
+{
+  "bloodPressure": { "systolic": 120, "diastolic": 80 },
+  "height": 170,
+  "weight": 65,
+  "temperature": 36.5,
+  "activityLevel": "Moderate"
+}
+
+---
+
+## Example response
+{
+  "bmi": 22.49,
+  "fever": false,
+  "healthRiskLevel": "Low Risk"
+}
+
+---
